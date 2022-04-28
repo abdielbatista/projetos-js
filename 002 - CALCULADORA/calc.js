@@ -4,6 +4,10 @@ const display = document.getElementById('display');
 const numeros = document.querySelectorAll('[id*=tecla]');
 const operadores = document.querySelectorAll('[id*=operador');
 
-const inserirNumero = (evento) => display.textContent = evento.target.textContent;
+const atualizarDisplay = (texto) => {
+    display.textContent += texto;
+}
+
+const inserirNumero = (evento) => atualizarDisplay(evento.target.textContent);
 
 numeros.forEach (numero => numero.addEventListener('click',inserirNumero));
